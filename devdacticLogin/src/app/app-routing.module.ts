@@ -17,6 +17,16 @@ const routes: Routes = [
     path: "cenas",
     loadChildren: () =>
       import("./members/cenas/cenas.module").then(m => m.CenasPageModule)
+  },
+  {
+    path: "home",
+    loadChildren: () =>
+      import("./members/home/home.module").then(m => m.HomePageModule)
+  },
+  {
+    path: "alarms",
+    loadChildren: () =>
+      import("./members/alarms/alarms.module").then(m => m.AlarmsPageModule)
   }
 ];
 

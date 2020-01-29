@@ -1,113 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="logout()">
-        <ion-icon slot="icon-only" name="log-out"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Pex Automação</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Minha casa</ion-label>
+    </ion-tab-button>
 
-<ion-content padding>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Minha casa</ion-label>
-      </ion-tab-button>
+    <ion-tab-button tab="cenas">
+      <ion-icon name="sunny"></ion-icon>
+      <ion-label>Cenas</ion-label>
+    </ion-tab-button>
 
-      <ion-tab-button tab="cenas">
-        <ion-icon name="sunny"></ion-icon>
-        <ion-label>Cenas</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-
-  <div *ngFor="let devices of devices">
-    <p *ngIf="devices.type === 'lampada' ">
-      {{devices.id}}
-      <ion-button
-        color="primary"
-        (click)="publish(devices._id,{'estado': 'ligado'})"
-        >ON</ion-button
-      >
-      <ion-button
-        color="danger"
-        (click)="publish(devices._id,{'estado': 'desligado'})"
-        >OFF</ion-button
-      >
-      ({{devices.estado_atual.estado}})
-      <br />
-      ----------------------------
-    </p>
-  </div>
-
-  <div *ngFor="let devices of devices">
-    <p *ngIf="devices.type === 'ar condicionado' ">
-      {{devices.id}}
-      <ion-button
-        color="primary"
-        (click)="publish(devices._id,{'estado': 'ligado'})"
-        >ON</ion-button
-      >
-      <ion-button
-        color="danger"
-        (click)="publish(devices._id,{'estado': 'desligado'})"
-        >OFF</ion-button
-      >
-      <br />
-      Tº: <ion-label>{{temp}}</ion-label>
-      <ion-button
-        round
-        (click)="temp===30?temp=temp:temp=temp+1"
-        (click)="publish(devices._id,{'temperatura': temp} )"
-        ><ion-icon name="arrow-round-up"></ion-icon
-      ></ion-button>
-      <ion-button
-        round
-        (click)="temp===16?temp=temp:temp=temp-1"
-        (click)="publish(devices._id,{'temperatura': temp} )"
-        ><ion-icon name="arrow-round-down"></ion-icon
-      ></ion-button>
-
-      ({{devices.estado_atual.estado}})
-      <br />
-      ----------------------------
-    </p>
-  </div>
-
-  <div *ngFor="let devices of devices">
-    <p *ngIf="devices.type === 'tv' ">
-      {{devices.id}}
-      <ion-button
-        color="primary"
-        (click)="publish(devices._id,{'estado': 'ligado'})"
-        >ON</ion-button
-      >
-      <ion-button
-        color="danger"
-        (click)="publish(devices._id,{'estado': 'desligado'})"
-        >OFF</ion-button
-      >
-
-      <br />
-      <ion-button
-        round
-        (click)="publish(devices._id,{'ultimoBotao': 'volumemais'} )"
-      >
-        <ion-icon name="arrow-round-up"></ion-icon>
-      </ion-button>
-
-      <ion-button
-        round
-        (click)="publish(devices._id,{'ultimoBotao': 'volumemenos'} )"
-        ><ion-icon name="arrow-round-down"></ion-icon
-      ></ion-button>
-
-      ({{devices.estado_atual.estado}})
-      <br />
-      ----------------------------
-    </p>
-  </div>
-</ion-content>
+    <ion-tab-button tab="alarms">
+      <ion-icon name="alarm"></ion-icon>
+      <ion-label>Alarmes</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
