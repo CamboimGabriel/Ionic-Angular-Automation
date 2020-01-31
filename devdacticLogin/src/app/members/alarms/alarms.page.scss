@@ -1,5 +1,5 @@
-.teste {
-  width: 180px;
+.testei {
+  width: 305px;
   flex-direction: row;
   border-width: 1px;
   display: flex;
@@ -11,8 +11,13 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.x1 {
-  width: 150px;
+.x11i {
+  width: 270px;
+  align-items: center;
+}
+
+.x1i {
+  width: 270px;
   height: 120px;
   display: flex;
   flex-direction: column;
@@ -20,30 +25,46 @@
   justify-content: center;
 }
 
-.x12 {
+.x12i {
   text-align: left;
 }
 
-.x13 {
+.x13i {
   background-color: rgba(0, 0, 0, 0.33);
   flex: 1;
   display: flex;
   height: 100%;
 }
 
-.x2 {
+.x2i {
   width: 35px;
   height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 }
 
-.bulb {
+.bulbi {
   font-size: 40px;
   color: rgba(0, 0, 0, 0.5);
 }
 
 .secondWord {
   color: #949494;
+}
+
+.opas {
+  width: 35px;
+  height: 120px;
+}
+
+.opas2 {
+  width: 500px;
+  height: 200px;
+}
+
+.rola {
+  text-align: center;
+  height: 70px;
 }

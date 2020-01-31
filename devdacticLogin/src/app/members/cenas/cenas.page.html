@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="orangePex">
+  <ion-toolbar color="dark" class="barra">
     <ion-buttons slot="start">
       <ion-button (click)="logout()">
         <ion-icon slot="icon-only" name="log-out"></ion-icon>
@@ -16,20 +16,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="background">
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
   <div *ngFor="let cenas of cenas">
-    <ion-button color="primary" (click)="enviarCena(cenas._id)"
-      >{{cenas.name}}</ion-button
-    >
+    <div class="buttons">
+      <ion-button class="bot" fill="outline" (click)="enviarCena(cenas._id)"
+        >{{cenas.name}}</ion-button
+      >
+      <ion-button
+        class="delCena"
+        fill="outline"
+        color="danger"
+        (click)="deletarCena(cenas._id)"
+        ><ion-icon name="close" class="icon"></ion-icon
+      ></ion-button>
+    </div>
   </div>
 </ion-content>
-
-<style>
-  ion-toolbar {
-    background-color: #fa840f;
-  }
-</style>

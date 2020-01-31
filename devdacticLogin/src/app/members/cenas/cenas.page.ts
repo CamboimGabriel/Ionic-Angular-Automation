@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "./../../services/authentication.service";
 import axios from "axios";
-import { NavController } from "@ionic/angular";
+import { NavController, Events } from "@ionic/angular";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-cenas",
@@ -10,9 +11,33 @@ import { NavController } from "@ionic/angular";
 })
 export class CenasPage implements OnInit {
   cenas = [{}];
-  constructor(private authService: AuthenticationService) {}
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router,
+    private event: Events
+  ) {
+    this.event.subscribe("functionCall:tabSelected", eventData => {
+      this.authService.getCurrentUser().then(id => {
+        axios.defaults.headers.common = {
+          Authorization: "Bearer " + id.token
+        };
+
+        axios
+          .get("http://localhost:3000/users/" + id.user._id + "/scenes/")
+          .then(response => {
+            console.log(response.data);
+
+            this.cenas = response.data;
+
+            console.log(this.cenas);
+          });
+      });
+    });
+  }
 
   ngOnInit() {
+    console.log("entrou");
+
     this.authService.getCurrentUser().then(id => {
       axios.defaults.headers.common = {
         Authorization: "Bearer " + id.token
@@ -33,8 +58,24 @@ export class CenasPage implements OnInit {
   logout() {
     this.authService.logout();
   }
+
   doRefresh(event) {
     console.log("Begin async operation");
+    this.authService.getCurrentUser().then(id => {
+      axios.defaults.headers.common = {
+        Authorization: "Bearer " + id.token
+      };
+
+      axios
+        .get("http://localhost:3000/users/" + id.user._id + "/scenes/")
+        .then(response => {
+          console.log(response.data);
+
+          this.cenas = response.data;
+
+          console.log(this.cenas);
+        });
+    });
 
     setTimeout(() => {
       console.log("Async operation has ended");
@@ -79,5 +120,28 @@ export class CenasPage implements OnInit {
         }
       }
     }
+  }
+
+  deletarCena(idCena) {
+    this.authService.getCurrentUser().then(id => {
+      axios.defaults.headers.common = {
+        Authorization: "Bearer " + id.token
+      };
+
+      axios
+        .post("http://localhost:3000/users/scenes/" + idCena + "/delete")
+        .then(e =>
+          axios
+            .get("http://localhost:3000/users/" + id.user._id + "/scenes/")
+            .then(response => {
+              console.log("pegou");
+
+              this.cenas = response.data;
+
+              console.log(e);
+            })
+        )
+        .catch(e => console.log(e));
+    });
   }
 }

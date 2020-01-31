@@ -1,1 +1,176 @@
+.teste {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 140px;
+  flex-direction: row;
+  border-width: 1px;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rba(0, 0, 0, 0.15);
+  padding: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
 
+.devices {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.barra {
+  color: whitesmoke;
+}
+
+.x1 {
+  width: 150px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.x12 {
+  text-align: left;
+}
+
+.x13 {
+  background-color: rgba(0, 0, 0, 0.33);
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+.x2 {
+  width: 35px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bulb {
+  font-size: 40px;
+  color: whitesmoke;
+}
+
+.secondWord {
+  color: #949494;
+}
+
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.testei {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 307px;
+  flex-direction: row;
+  border-width: 1px;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rba(0, 0, 0, 0.15);
+  padding: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.x1i {
+  width: 270px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.x12i {
+  text-align: left;
+}
+
+.x11i {
+  width: 270px;
+  align-items: center;
+}
+
+.x14i {
+  height: 16px;
+}
+.x15i {
+  height: 16px;
+}
+
+.x16i {
+  height: 28px;
+}
+
+.x13i {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+.x2i {
+  width: 35px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bulbi {
+  font-size: 40px;
+  color: whitesmoke;
+}
+
+.checkoff {
+  font-size: 40px;
+  color: #0099ab;
+}
+
+.checkon {
+  font-size: 40px;
+  color: #0099ab;
+}
+.background {
+  --background: url("../home/imagem.png");
+  height: 100%;
+  width: 100%;
+}
+
+.opas {
+  width: 35px;
+  height: 120px;
+}
+
+.ion-activatable {
+  position: relative;
+  overflow: hidden;
+}
+
+.devicesID {
+  color: whitesmoke;
+}
+
+.rola {
+  color: whitesmoke;
+  font-size: 150%;
+  text-align: center;
+  align-items: center;
+}
+
+.botao {
+  font-size: 16px;
+  color: #0099ab;
+  --border-color: #0099ab;
+  --background-activated: #0099ab;
+  --color-activated: #000000;
+}
+
+.icone {
+  font-size: 24px;
+  color: #0099ab;
+  --border-color: #0099ab;
+  --background-activated: #0099ab;
+  --color-activated: #000000;
+}

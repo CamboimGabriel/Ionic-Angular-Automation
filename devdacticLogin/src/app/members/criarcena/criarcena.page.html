@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="asdf">
+  <ion-toolbar color="dark" class="barra">
     <ion-buttons slot="start" defaultHref="/members/cenas">
       <ion-button>
         <ion-back-button [text]="Voltar"></ion-back-button>
@@ -9,27 +9,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="background">
   <ion-item>
     <ion-label position="floating">Nome da cena</ion-label>
     <ion-input inputmode="text" [(ngModel)]="nomeCena"></ion-input>
   </ion-item>
 
   <div *ngFor="let devices of devices; let i = index">
-    <ion-button color="danger" (click)="remove(devices._id)"
-      ><ion-icon name="close"></ion-icon
-    ></ion-button>
-    {{devices.id}}
-    <ion-toggle (click)="toggle(devices._id)" color="primary"></ion-toggle>
-  </div>
+    <div class="buttons">
+      <ion-toggle
+        class="toggle"
+        (click)="toggle(devices._id)"
+        color="primary"
+      ></ion-toggle>
+      <div class="letra">
+        {{ devices.id}}
+      </div>
 
-  <ion-button (click)="criarCena()">
+      <div class="close">
+        <ion-button fill="outline" color="danger" (click)="remove(devices._id)"
+          ><ion-icon name="close"></ion-icon
+        ></ion-button>
+      </div>
+    </div>
+  </div>
+  <ion-button color="dark" (click)="criaCena()" routerLink=".." expand="block">
     Criar
   </ion-button>
 </ion-content>
-
-<style>
-  ion-toolbar {
-    background-color: #fa840f;
-  }
-</style>

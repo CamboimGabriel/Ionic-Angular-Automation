@@ -1,0 +1,47 @@
+.bot {
+  width: 78%;
+  height: 50px;
+  color: #0099ab;
+  --border-color: #0099ab;
+  --background-activated: #0099ab;
+  --color-activated: #000000;
+}
+
+.label {
+  text-align: center;
+}
+
+.background {
+  --background: url("../home/imagem.png");
+  height: 100%;
+  width: 100%;
+}
+
+.barra {
+  color: whitesmoke;
+}
+
+.delCena {
+  width: 18%;
+  height: 50px;
+  color: rgb(255, 115, 0);
+}
+.buttons {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 30%;
+  flex-direction: row;
+  border-width: 1px;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rba(0, 0, 0, 0.15);
+  padding: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 50px;
+}
+
+.icon {
+  font-size: 128px;
+}

@@ -3,6 +3,8 @@ import { AuthenticationService } from "./../../services/authentication.service";
 import axios from "axios";
 import { ReplaySubject } from "rxjs";
 import { Router } from "@angular/router";
+import { Location } from "@angular/common";
+import { Events } from "@ionic/angular";
 
 @Component({
   selector: "app-criarcena",
@@ -16,7 +18,9 @@ export class CriarcenaPage implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private location: Location,
+    private event: Events
   ) {}
 
   ngOnInit() {
@@ -89,6 +93,12 @@ export class CriarcenaPage implements OnInit {
     });
 
     console.log(this.devices);
+    this.tabSelected();
+    this.location.back();
+  }
+
+  tabSelected() {
+    this.event.publish("functionCall:tabSelected");
   }
 
   toggle(deviceID) {

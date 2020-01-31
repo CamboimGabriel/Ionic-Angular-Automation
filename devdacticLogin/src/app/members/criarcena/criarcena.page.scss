@@ -1,0 +1,34 @@
+.background {
+  --background: url("../home/imagem.png");
+  height: 100%;
+  width: 100%;
+}
+.barra {
+  color: whitesmoke;
+}
+.buttons {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  flex-direction: row;
+  border-width: 1px;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rba(0, 0, 0, 0.15);
+  padding: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.toggle {
+  --background: lightgrey;
+}
+.letra {
+  float: right;
+  color: whitesmoke;
+  width: 50%;
+}
+
+.close {
+  width: 170px;
+}

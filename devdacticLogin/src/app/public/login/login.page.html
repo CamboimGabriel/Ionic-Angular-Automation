@@ -1,13 +1,17 @@
 <ion-header>
-  <ion-toolbar color="orangePex">
-    <ion-title>Login</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title class="barra">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="background">
   <ion-list>
     <ion-item>
-      <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+      <ion-input
+        placeholder="Username"
+        [(ngModel)]="username"
+        class="texto"
+      ></ion-input>
     </ion-item>
     <ion-item>
       <ion-input
@@ -18,7 +22,7 @@
     </ion-item>
   </ion-list>
 
-  <ion-button (click)="login()" expand="block">Login</ion-button>
+  <ion-button color="dark" (click)="login()" expand="block">Login</ion-button>
 </ion-content>
 
 <style>

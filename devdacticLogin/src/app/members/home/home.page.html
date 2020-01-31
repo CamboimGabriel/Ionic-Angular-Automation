@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="orangePex">
+  <ion-toolbar color="dark" class="barra">
     <ion-buttons slot="start">
       <ion-button (click)="logout()">
         <ion-icon slot="icon-only" name="log-out"></ion-icon>
@@ -9,93 +9,230 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <div *ngFor="let devices of devices">
-    <p *ngIf="devices.type === 'lampada' ">
-      {{devices.id}}
-      <ion-button
-        color="primary"
-        (click)="publish(devices._id,{'estado': 'ligado'})"
-        >ON</ion-button
-      >
-      <ion-button
-        color="danger"
-        (click)="publish(devices._id,{'estado': 'desligado'})"
-        >OFF</ion-button
-      >
-      ({{devices.estado_atual.estado}})
-      <br />
-      ----------------------------
-    </p>
-  </div>
+<ion-content padding class="background">
+  <ion-grid>
+    <ion-row wrap>
+      <ion-col col-6 *ngFor="let devices of devices">
+        <div *ngIf="devices.type === 'lampada' ">
+          <div *ngIf="devices.estado_atual.estado === 'ligado' ">
+            <div
+              class="teste ion-activatable"
+              (click)="publish(devices._id,{'estado': 'desligado'})"
+            >
+              <ion-ripple-effect></ion-ripple-effect>
+              <div class="x1">
+                <div><ion-icon name="bulb" class="bulb"></ion-icon></div>
 
-  <div *ngFor="let devices of devices">
-    <p *ngIf="devices.type === 'ar condicionado' ">
-      {{devices.id}}
-      <ion-button
-        color="primary"
-        (click)="publish(devices._id,{'estado': 'ligado'})"
-        >ON</ion-button
-      >
-      <ion-button
-        color="danger"
-        (click)="publish(devices._id,{'estado': 'desligado'})"
-        >OFF</ion-button
-      >
-      <br />
-      Tº: <ion-label>{{temp}}</ion-label>
-      <ion-button
-        round
-        (click)="temp===30?temp=temp:temp=temp+1"
-        (click)="publish(devices._id,{'temperatura': temp} )"
-        ><ion-icon name="arrow-round-up"></ion-icon
-      ></ion-button>
-      <ion-button
-        round
-        (click)="temp===16?temp=temp:temp=temp-1"
-        (click)="publish(devices._id,{'temperatura': temp} )"
-        ><ion-icon name="arrow-round-down"></ion-icon
-      ></ion-button>
+                <div class="x12">
+                  <div>
+                    <span text class="devicesID">{{devices.id}}</span>
+                  </div>
+                  <div><span text class="secondWord">Diretoria</span></div>
+                </div>
+              </div>
+              <div class="x2">
+                <ion-icon name="radio-button-on" class="checkon"></ion-icon>
+              </div>
+            </div>
+          </div>
 
-      ({{devices.estado_atual.estado}})
-      <br />
-      ----------------------------
-    </p>
-  </div>
+          <div *ngIf="devices.estado_atual.estado === 'desligado' ">
+            <div
+              class="teste ion-activatable"
+              (click)="publish(devices._id,{'estado': 'ligado'})"
+            >
+              <ion-ripple-effect></ion-ripple-effect>
+              <div class="x1">
+                <div><ion-icon name="bulb" class="bulb"></ion-icon></div>
 
-  <div *ngFor="let devices of devices">
-    <p *ngIf="devices.type === 'tv' ">
-      {{devices.id}}
-      <ion-button
-        color="primary"
-        (click)="publish(devices._id,{'estado': 'ligado'})"
-        >ON</ion-button
-      >
-      <ion-button
-        color="danger"
-        (click)="publish(devices._id,{'estado': 'desligado'})"
-        >OFF</ion-button
-      >
+                <div class="x12">
+                  <div>
+                    <span text class="devicesID">{{devices.id}}</span>
+                  </div>
+                  <div><span text class="secondWord">Diretoria</span></div>
+                </div>
+              </div>
+              <div class="x2">
+                <ion-icon name="radio-button-off" class="checkoff"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <br />
-      <ion-button
-        round
-        (click)="publish(devices._id,{'ultimoBotao': 'volumemais'} )"
-      >
-        <ion-icon name="arrow-round-up"></ion-icon>
-      </ion-button>
+        <div *ngIf="devices.type === 'ar condicionado' ">
+          <div *ngIf="devices.estado_atual.estado ==='ligado'">
+            <div class="testei">
+              <div
+                class="x1i ion-activatable"
+                (click)="publish(devices._id,{'estado': 'desligado'})"
+              >
+                <ion-ripple-effect></ion-ripple-effect>
+                <div><ion-icon name="snow" class="bulbi"></ion-icon></div>
 
-      <ion-button
-        round
-        (click)="publish(devices._id,{'ultimoBotao': 'volumemenos'} )"
-        ><ion-icon name="arrow-round-down"></ion-icon
-      ></ion-button>
+                <div class="x12i">
+                  <div>
+                    <span ion-text class="devicesID">{{devices.id}}</span>
+                  </div>
+                  <div><span ion-text class="secondWord">Diretoria</span></div>
+                </div>
+              </div>
 
-      ({{devices.estado_atual.estado}})
-      <br />
-      ----------------------------
-    </p>
-  </div>
+              <div class="x2i">
+                <ion-icon name="radio-button-on" class="checkon"></ion-icon>
+                <div class="opas"></div>
+              </div>
+
+              <div class="x11i">
+                <div class="x15i"></div>
+                <div class="rola">Tº: <ion-label>{{temp}}</ion-label></div>
+                <div class="x14i"></div>
+                <ion-button
+                  class="botao"
+                  (click)="temp===30?temp=temp:temp=temp+1"
+                  (click)="publish(devices._id,{'temperatura': temp} )"
+                  fill="outline"
+                  ><ion-icon name="arrow-up" class="icone"></ion-icon
+                ></ion-button>
+                <ion-button
+                  class="botao"
+                  (click)="temp===16?temp=temp:temp=temp-1"
+                  (click)="publish(devices._id,{'temperatura': temp} )"
+                  fill="outline"
+                  ><ion-icon name="arrow-down" class="icone"></ion-icon
+                ></ion-button>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="devices.estado_atual.estado ==='desligado'">
+            <div class="testei">
+              <div
+                class="x1i ion-activatable"
+                (click)="publish(devices._id,{'estado': 'ligado'})"
+              >
+                <ion-ripple-effect></ion-ripple-effect>
+                <div><ion-icon name="flame" class="bulbi"></ion-icon></div>
+
+                <div class="x12i">
+                  <div>
+                    <span ion-text class="devicesID">{{devices.id}}</span>
+                  </div>
+                  <div><span ion-text class="secondWord">Diretoria</span></div>
+                </div>
+              </div>
+
+              <div class="x2i">
+                <ion-icon name="radio-button-off" class="checkoff"></ion-icon>
+                <div class="opas"></div>
+              </div>
+
+              <div class="x11i">
+                <div class="x15i"></div>
+                <div class="rola">Tº: <ion-label>{{temp}}</ion-label></div>
+                <div class="x14i"></div>
+                <ion-button
+                  class="botao"
+                  (click)="temp===30?temp=temp:temp=temp+1"
+                  (click)="publish(devices._id,{'temperatura': temp} )"
+                  fill="outline"
+                  ><ion-icon name="arrow-up" class="icone"></ion-icon
+                ></ion-button>
+                <ion-button
+                  class="botao"
+                  (click)="temp===16?temp=temp:temp=temp-1"
+                  (click)="publish(devices._id,{'temperatura': temp} )"
+                  fill="outline"
+                  ><ion-icon name="arrow-down" class="icone"></ion-icon
+                ></ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="devices.type === 'tv' ">
+          <div *ngIf="devices.estado_atual.estado ==='ligado'">
+            <div class="testei">
+              <div
+                class="x1i ion-activatable"
+                (click)="publish(devices._id,{'estado': 'desligado'})"
+              >
+                <ion-ripple-effect></ion-ripple-effect>
+                <div><ion-icon name="tv" class="bulbi"></ion-icon></div>
+
+                <div class="x12i">
+                  <div>
+                    <span text class="devicesID">{{devices.id}}</span>
+                  </div>
+                  <div><span text class="secondWord">Diretoria</span></div>
+                </div>
+              </div>
+              <div class="x2i">
+                <ion-icon name="radio-button-on" class="checkon"></ion-icon>
+                <div class="opas"></div>
+              </div>
+              <div class="x11i">
+                <div class="x15i"></div>
+                <div class="x14i"></div>
+                <div class="x16i"></div>
+                <ion-button
+                  class="botao"
+                  (click)="publish(devices._id,{'ultimoBotao': 'volumemais'} )"
+                  fill="outline"
+                  ><ion-icon name="add" class="icone"></ion-icon
+                ></ion-button>
+                <ion-button
+                  class="botao"
+                  (click)="publish(devices._id,{'ultimoBotao': 'volumemenos'} )"
+                  fill="outline"
+                  ><ion-icon name="remove" class="icone"></ion-icon
+                ></ion-button>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="devices.estado_atual.estado ==='desligado'">
+            <div class="testei">
+              <div
+                class="x1i ion-activatable"
+                (click)="publish(devices._id,{'estado': 'ligado'})"
+              >
+                <ion-ripple-effect></ion-ripple-effect>
+                <div><ion-icon name="tv" class="bulbi"></ion-icon></div>
+
+                <div class="x12i">
+                  <div>
+                    <span text class="devicesID">{{devices.id}}</span>
+                  </div>
+                  <div><span text class="secondWord">Diretoria</span></div>
+                </div>
+              </div>
+              <div class="x2i">
+                <ion-icon name="radio-button-off" class="checkoff"></ion-icon>
+                <div class="opas"></div>
+              </div>
+              <div class="x11i">
+                <div class="x15i"></div>
+                <div class="x14i"></div>
+                <div class="x16i"></div>
+                <ion-button
+                  class="botao"
+                  (click)="publish(devices._id,{'ultimoBotao': 'volumemais'} )"
+                  fill="outline"
+                  ><ion-icon name="add" class="icone"></ion-icon
+                ></ion-button>
+                <ion-button
+                  class="botao"
+                  (click)="publish(devices._id,{'ultimoBotao': 'volumemenos'} )"
+                  fill="outline"
+                  ><ion-icon name="remove" class="icone"></ion-icon
+                ></ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <style>
@@ -110,10 +247,8 @@
     height: 75px;
   }
 
-  ion-icon {
-    font-size: 64px;
-  }
-  ion-toolbar {
-    background-color: #fa840f;
+  ion-content {
+    background-color: lightgrey;
+    color: lightgrey;
   }
 </style>
