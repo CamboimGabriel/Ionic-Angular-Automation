@@ -28,6 +28,8 @@ export class HomePage implements OnInit {
 
   temp = 19;
   devices = [{}];
+  countO = 0;
+  countC = 1;
 
   constructor(
     private _mqttService: MqttService,
@@ -54,6 +56,26 @@ export class HomePage implements OnInit {
     });
   }
 
+  doRefresh(event) {
+    console.log("Begin async operation");
+    this.authService.getCurrentUser().then(id => {
+      console.log(this.message);
+      axios.defaults.headers.common = {
+        Authorization: "Bearer " + id.token
+      };
+
+      axios
+        .get("http://localhost:3000/users/" + id.user._id + "/devices/")
+        .then(response => {
+          this.devices = response.data;
+        });
+    });
+    setTimeout(() => {
+      console.log("Async operation has ended");
+      event.target.complete();
+    }, 2000);
+  }
+
   ngOnInit() {
     this.authService.getCurrentUser().then(id => {
       axios.defaults.headers.common = {
@@ -63,9 +85,7 @@ export class HomePage implements OnInit {
       axios
         .get("http://localhost:3000/users/" + id.user._id + "/devices/")
         .then(response => {
-          for (var i = 0; i < response.data.length; i++) {
-            this.devices.push(response.data[i]);
-          }
+          this.devices = response.data;
         });
     });
   }
@@ -95,4 +115,5 @@ export class HomePage implements OnInit {
   logout() {
     this.authService.logout();
   }
+
 }

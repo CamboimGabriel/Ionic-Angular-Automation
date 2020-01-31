@@ -1,9 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>cenas</ion-title>
+  <ion-toolbar color="orangePex">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/criarcena">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Cenas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <div *ngFor="let cenas of cenas">
+    <ion-button color="primary" (click)="enviarCena(cenas._id)"
+      >{{cenas.name}}</ion-button
+    >
+  </div>
 </ion-content>
+
+<style>
+  ion-toolbar {
+    background-color: #fa840f;
+  }
+</style>

@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>alarms</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Alarmes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <div class="teste">
+    <div class="x1">
+      <div><ion-icon name="bulb" class="bulb"></ion-icon></div>
+
+      <div class="x12">
+        <div><span ion-text color="secondary">Lâmpada</span></div>
+        <div><span ion-text class="secondWord">Sala</span></div>
+      </div>
+    </div>
+    <div class="x2">
+      <ion-checkbox></ion-checkbox>
+    </div>
+  </div>
 </ion-content>

@@ -1,21 +1,28 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="orangePex">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
- 
-
 
 <ion-content padding>
-
   <ion-list>
     <ion-item>
-        <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+      <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+      <ion-input
+        placeholder="Password"
+        type="password"
+        [(ngModel)]="password"
+      ></ion-input>
     </ion-item>
-    </ion-list>
+  </ion-list>
 
   <ion-button (click)="login()" expand="block">Login</ion-button>
 </ion-content>
+
+<style>
+  ion-toolbar {
+    background-color: #fa840f;
+  }
+</style>

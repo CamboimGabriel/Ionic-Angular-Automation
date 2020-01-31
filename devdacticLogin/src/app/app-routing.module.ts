@@ -27,6 +27,13 @@ const routes: Routes = [
     path: "alarms",
     loadChildren: () =>
       import("./members/alarms/alarms.module").then(m => m.AlarmsPageModule)
+  },
+  {
+    path: "criarcena",
+    loadChildren: () =>
+      import("./members/criarcena/criarcena.module").then(
+        m => m.CriarcenaPageModule
+      )
   }
 ];
 

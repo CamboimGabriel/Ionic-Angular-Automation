@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="asdf">
+    <ion-buttons slot="start" defaultHref="/members/cenas">
+      <ion-button>
+        <ion-back-button [text]="Voltar"></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Criar cenas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome da cena</ion-label>
+    <ion-input inputmode="text" [(ngModel)]="nomeCena"></ion-input>
+  </ion-item>
+
+  <div *ngFor="let devices of devices; let i = index">
+    <ion-button color="danger" (click)="remove(devices._id)"
+      ><ion-icon name="close"></ion-icon
+    ></ion-button>
+    {{devices.id}}
+    <ion-toggle (click)="toggle(devices._id)" color="primary"></ion-toggle>
+  </div>
+
+  <ion-button (click)="criarCena()">
+    Criar
+  </ion-button>
+</ion-content>
+
+<style>
+  ion-toolbar {
+    background-color: #fa840f;
+  }
+</style>
