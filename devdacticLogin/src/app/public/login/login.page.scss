@@ -10,4 +10,30 @@
 }
 
 .texto {
+  width: 80%;
+  --color: whitesmoke;
+  --background: purple;
+  --placeholder-color: whitesmoke;
+  --placeholder-opacity: 0.7;
+}
+
+.ajust {
+  height: 30%;
+  width: 100%;
+  align-content: center;
+}
+
+.menu {
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.button {
+  color: #0099ab;
+  --border-color: #0099ab;
+  --background-activated: #0099ab;
+  --color-activated: #000000;
 }

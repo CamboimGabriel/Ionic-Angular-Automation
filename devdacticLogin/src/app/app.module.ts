@@ -11,6 +11,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { IonicStorageModule } from "@ionic/storage";
 
 import { IMqttMessage, MqttModule, IMqttServiceOptions } from "ngx-mqtt";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: "18.231.176.98",
@@ -26,7 +28,8 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     IonicModule.forRoot(),
     AppRoutingModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
