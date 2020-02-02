@@ -31,6 +31,13 @@ const routes: Routes = [
           import("../criarcena/criarcena.module").then(
             m => m.CriarcenaPageModule
           )
+      },
+      {
+        path: "alarms/criaralarme",
+        loadChildren: () =>
+          import("../criaralarme/criaralarme.module").then(
+            m => m.CriaralarmePageModule
+          )
       }
     ]
   },

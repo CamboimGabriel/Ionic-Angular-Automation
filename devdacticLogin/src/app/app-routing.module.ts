@@ -38,6 +38,14 @@ const routes: Routes = [
       import("./members/criarcena/criarcena.module").then(
         m => m.CriarcenaPageModule
       )
+  },
+  {
+    path: "criaralarme",
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import("./members/criaralarme/criaralarme.module").then(
+        m => m.CriaralarmePageModule
+      )
   }
 ];
 

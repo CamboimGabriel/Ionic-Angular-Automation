@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" defaultHref="/members/alarms">
+      <ion-button>
+        <ion-back-button text="Voltar"></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Criar Alarmes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+    <ion-item>
+      <ion-label position="floating">Nome do Alarme</ion-label>
+      <ion-input inputmode="text" [(ngModel)]="nomeAlarme"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Hora (00-23)</ion-label>
+      <ion-input inputmode="text" [(ngModel)]="hora"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Minuto (00-59)</ion-label>
+      <ion-input inputmode="text" [(ngModel)]="minuto"></ion-input>
+    </ion-item>
+    <br />
+    <ion-label class="barra"
+      >Repetir:
+      <ion-toggle
+        class="toggle"
+        [(ngModel)]="repetir"
+        checked="false"
+      ></ion-toggle
+    ></ion-label>
+    <div *ngIf="repetir==true">
+      <ion-label class="barra"
+        >DOM
+        <ion-checkbox [(ngModel)]="dias.dom" checked="false"></ion-checkbox>
+        SEG
+        <ion-checkbox [(ngModel)]="dias.seg" checked="false"></ion-checkbox>
+        TER
+        <ion-checkbox [(ngModel)]="dias.ter" checked="false"></ion-checkbox>
+        QUA
+        <ion-checkbox [(ngModel)]="dias.qua" checked="false"></ion-checkbox>
+        QUI
+        <ion-checkbox [(ngModel)]="dias.qui" checked="false"></ion-checkbox>
+        SEX
+        <ion-checkbox [(ngModel)]="dias.sex" checked="false"></ion-checkbox>
+        SAB</ion-label
+      >
+      <ion-checkbox [(ngModel)]="dias.sab" checked="false"></ion-checkbox>
+    </div>
+
+    <div *ngFor="let devices of devices; let i = index">
+      <div class="buttons">
+        <ion-toggle
+          class="toggle"
+          (click)="toggle(devices._id)"
+          color="primary"
+        ></ion-toggle>
+        <div class="letra">
+          {{ devices.id}}
+        </div>
+
+        <div class="close">
+          <ion-button
+            fill="outline"
+            color="danger"
+            (click)="remove(devices._id)"
+            ><ion-icon name="close"></ion-icon
+          ></ion-button>
+        </div>
+      </div>
+    </div>
+    <ion-button color="dark" (click)="criar()" routerLink=".." expand="block">
+      Criar
+    </ion-button>
+  </div>
+</ion-content>

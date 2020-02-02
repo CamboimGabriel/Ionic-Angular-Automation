@@ -1,42 +1,24 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-button (click)="logout()">
         <ion-icon slot="icon-only" name="log-out"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>Alarmes</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/criaralarme">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-
-  <div class="testei">
-    <div class="x1i">
-      <div><ion-icon name="snow" class="bulbi"></ion-icon></div>
-
-      <div class="x12i">
-        <div><span ion-text color="secondary">Ar condicionado</span></div>
-        <div><span ion-text class="secondWord">Sala</span></div>
-      </div>
-    </div>
-
-    <div class="x2i">
-      <ion-checkbox></ion-checkbox>
-      <div class="opas"></div>
-    </div>
-
-    <div class="x11i">
-      <div class="rola">Tº:19</div>
-      <ion-button class="botao"
-        ><ion-icon name="arrow-up"></ion-icon
-      ></ion-button>
-      <ion-button class="botao"
-        ><ion-icon name="arrow-down"></ion-icon
-      ></ion-button>
-    </div>
+  <div class="background">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
   </div>
 </ion-content>
