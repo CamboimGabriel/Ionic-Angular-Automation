@@ -22,7 +22,7 @@ export class AlarmsPage implements OnInit {
         };
 
         axios
-          .get("http://localhost:3000/users/" + id.user._id + "/alarms/")
+          .get("http://18.231.176.98:3000/users/" + id.user._id + "/alarms/")
           .then(response => {
             console.log(response.data);
 
@@ -41,7 +41,7 @@ export class AlarmsPage implements OnInit {
       };
 
       axios
-        .get("http://localhost:3000/users/" + id.user._id + "/alarms/")
+        .get("http://18.231.176.98:3000/users/" + id.user._id + "/alarms/")
         .then(response => {
           console.log(response.data);
 
@@ -63,7 +63,7 @@ export class AlarmsPage implements OnInit {
       };
 
       axios
-        .get("http://localhost:3000/users/" + id.user._id + "/alarms/")
+        .get("http://18.231.176.98:3000/users/" + id.user._id + "/alarms/")
         .then(response => {
           console.log(response.data);
 
@@ -86,10 +86,10 @@ export class AlarmsPage implements OnInit {
       };
 
       axios
-        .post("http://localhost:3000/users/alarms/" + idAlarme + "/delete")
+        .post("http://18.231.176.98:3000/users/alarms/" + idAlarme + "/delete")
         .then(e =>
           axios
-            .get("http://localhost:3000/users/" + id.user._id + "/alarms/")
+            .get("http://18.231.176.98:3000/users/" + id.user._id + "/alarms/")
             .then(response => {
               console.log("pegou");
 
@@ -109,10 +109,12 @@ export class AlarmsPage implements OnInit {
       };
 
       axios
-        .post("http://localhost:3000/users/alarms/" + idAlarme + "/" + estado)
+        .post(
+          "http://18.231.176.98:3000/users/alarms/" + idAlarme + "/" + estado
+        )
         .then(e =>
           axios
-            .get("http://localhost:3000/users/" + id.user._id + "/alarms/")
+            .get("http://18.231.176.98:3000/users/" + id.user._id + "/alarms/")
             .then(response => {
               console.log("pegou");
 
