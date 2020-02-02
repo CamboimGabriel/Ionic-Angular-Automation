@@ -30,7 +30,7 @@ export class CriarcenaPage implements OnInit {
       };
 
       axios
-        .get("http://localhost:3000/users/" + id.user._id + "/devices/")
+        .get("http://18.231.176.98:3000/users/" + id.user._id + "/devices/")
         .then(response => {
           this.devices = response.data.map(elem => ({
             ...elem,
@@ -82,7 +82,7 @@ export class CriarcenaPage implements OnInit {
 
       axios
         .post(
-          "http://localhost:3000/users/" +
+          "http://18.231.176.98:3000/users/" +
             id.user._id +
             "/scenes/create/" +
             this.nomeCena,

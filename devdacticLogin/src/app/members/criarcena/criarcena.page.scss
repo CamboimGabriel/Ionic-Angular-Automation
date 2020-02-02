@@ -1,11 +1,20 @@
 .background {
-  --background: url("../home/imagem.png");
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    172deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 89, 145, 1) 0%,
+    rgba(90, 6, 128, 1) 59%
+  );
   height: 100%;
   width: 100%;
+  padding: 15px;
 }
+
 .barra {
   color: whitesmoke;
 }
+
 .buttons {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -23,6 +32,7 @@
 .toggle {
   --background: lightgrey;
 }
+
 .letra {
   float: right;
   color: whitesmoke;

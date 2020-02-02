@@ -47,7 +47,9 @@ export class HomePage implements OnInit {
             };
 
             axios
-              .get("http://localhost:3000/users/" + id.user._id + "/devices/")
+              .get(
+                "http://18.231.176.98:3000/users/" + id.user._id + "/devices/"
+              )
               .then(response => {
                 this.devices = response.data;
               });
@@ -65,7 +67,7 @@ export class HomePage implements OnInit {
       };
 
       axios
-        .get("http://localhost:3000/users/" + id.user._id + "/devices/")
+        .get("http://18.231.176.98:3000/users/" + id.user._id + "/devices/")
         .then(response => {
           this.devices = response.data;
         });
@@ -83,7 +85,7 @@ export class HomePage implements OnInit {
       };
 
       axios
-        .get("http://localhost:3000/users/" + id.user._id + "/devices/")
+        .get("http://18.231.176.98:3000/users/" + id.user._id + "/devices/")
         .then(response => {
           this.devices = response.data;
         });
@@ -100,7 +102,7 @@ export class HomePage implements OnInit {
 
       axios
         .post(
-          "http://localhost:3000/users/devices/" + deviceID + "/shadow",
+          "http://18.231.176.98:3000/users/devices/" + deviceID + "/shadow",
           data
         )
         .then(e => console.log(e))

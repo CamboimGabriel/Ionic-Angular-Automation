@@ -23,7 +23,7 @@ export class CenasPage implements OnInit {
         };
 
         axios
-          .get("http://localhost:3000/users/" + id.user._id + "/scenes/")
+          .get("http://18.231.176.98:3000/users/" + id.user._id + "/scenes/")
           .then(response => {
             console.log(response.data);
 
@@ -44,7 +44,7 @@ export class CenasPage implements OnInit {
       };
 
       axios
-        .get("http://localhost:3000/users/" + id.user._id + "/scenes/")
+        .get("http://18.231.176.98:3000/users/" + id.user._id + "/scenes/")
         .then(response => {
           console.log(response.data);
 
@@ -67,7 +67,7 @@ export class CenasPage implements OnInit {
       };
 
       axios
-        .get("http://localhost:3000/users/" + id.user._id + "/scenes/")
+        .get("http://18.231.176.98:3000/users/" + id.user._id + "/scenes/")
         .then(response => {
           console.log(response.data);
 
@@ -94,7 +94,7 @@ export class CenasPage implements OnInit {
 
       axios
         .post(
-          "http://localhost:3000/users/devices/" + deviceID + "/shadow",
+          "http://18.231.176.98:3000/users/devices/" + deviceID + "/shadow",
           data
         )
         .then(e => console.log(e))
@@ -129,10 +129,10 @@ export class CenasPage implements OnInit {
       };
 
       axios
-        .post("http://localhost:3000/users/scenes/" + idCena + "/delete")
+        .post("http://18.231.176.98:3000/users/scenes/" + idCena + "/delete")
         .then(e =>
           axios
-            .get("http://localhost:3000/users/" + id.user._id + "/scenes/")
+            .get("http://18.231.176.98:3000/users/" + id.user._id + "/scenes/")
             .then(response => {
               console.log("pegou");
 

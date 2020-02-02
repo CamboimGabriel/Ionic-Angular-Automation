@@ -10,11 +10,21 @@
 .label {
   text-align: center;
 }
+.refresh {
+  background-color: transparent;
+}
 
 .background {
-  --background: url("../home/imagem.png");
-  height: 100%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    172deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 89, 145, 1) 0%,
+    rgba(90, 6, 128, 1) 59%
+  );
+  height: 100% !important;
   width: 100%;
+  padding: 15px;
 }
 
 .barra {

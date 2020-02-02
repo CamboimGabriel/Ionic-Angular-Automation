@@ -9,31 +9,41 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="background">
-  <ion-item>
-    <ion-label position="floating">Nome da cena</ion-label>
-    <ion-input inputmode="text" [(ngModel)]="nomeCena"></ion-input>
-  </ion-item>
+<ion-content>
+  <div class="background">
+    <ion-item>
+      <ion-label position="floating">Nome da cena</ion-label>
+      <ion-input inputmode="text" [(ngModel)]="nomeCena"></ion-input>
+    </ion-item>
 
-  <div *ngFor="let devices of devices; let i = index">
-    <div class="buttons">
-      <ion-toggle
-        class="toggle"
-        (click)="toggle(devices._id)"
-        color="primary"
-      ></ion-toggle>
-      <div class="letra">
-        {{ devices.id}}
-      </div>
+    <div *ngFor="let devices of devices; let i = index">
+      <div class="buttons">
+        <ion-toggle
+          class="toggle"
+          (click)="toggle(devices._id)"
+          color="primary"
+        ></ion-toggle>
+        <div class="letra">
+          {{ devices.id}}
+        </div>
 
-      <div class="close">
-        <ion-button fill="outline" color="danger" (click)="remove(devices._id)"
-          ><ion-icon name="close"></ion-icon
-        ></ion-button>
+        <div class="close">
+          <ion-button
+            fill="outline"
+            color="danger"
+            (click)="remove(devices._id)"
+            ><ion-icon name="close"></ion-icon
+          ></ion-button>
+        </div>
       </div>
     </div>
+    <ion-button
+      color="dark"
+      (click)="criaCena()"
+      routerLink=".."
+      expand="block"
+    >
+      Criar
+    </ion-button>
   </div>
-  <ion-button color="dark" (click)="criaCena()" routerLink=".." expand="block">
-    Criar
-  </ion-button>
 </ion-content>

@@ -15,21 +15,25 @@ const routes: Routes = [
   },
   {
     path: "cenas",
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import("./members/cenas/cenas.module").then(m => m.CenasPageModule)
   },
   {
     path: "home",
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import("./members/home/home.module").then(m => m.HomePageModule)
   },
   {
     path: "alarms",
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import("./members/alarms/alarms.module").then(m => m.AlarmsPageModule)
   },
   {
     path: "criarcena",
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import("./members/criarcena/criarcena.module").then(
         m => m.CriarcenaPageModule
