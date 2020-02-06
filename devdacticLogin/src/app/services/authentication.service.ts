@@ -30,7 +30,7 @@ export class AuthenticationService {
 
   login(username, pass) {
     axios
-      .post("http://18.231.176.98:3000/auth/authenticate", {
+      .post("http://18.231.119.219:3000/auth/authenticate", {
         name: username,
         password: pass
       })

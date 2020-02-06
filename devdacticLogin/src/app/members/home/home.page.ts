@@ -12,7 +12,7 @@ import {
 } from "ngx-mqtt";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: "18.231.176.98",
+  hostname: "18.231.119.219",
   port: 9001,
   path: "/mqtt"
 };
@@ -48,7 +48,7 @@ export class HomePage implements OnInit {
 
             axios
               .get(
-                "http://18.231.176.98:3000/users/" + id.user._id + "/devices/"
+                "http://18.231.119.219:3000/users/" + id.user._id + "/devices/"
               )
               .then(response => {
                 this.devices = response.data;
@@ -67,7 +67,7 @@ export class HomePage implements OnInit {
       };
 
       axios
-        .get("http://18.231.176.98:3000/users/" + id.user._id + "/devices/")
+        .get("http://18.231.119.219:3000/users/" + id.user._id + "/devices/")
         .then(response => {
           this.devices = response.data;
         });
@@ -85,7 +85,7 @@ export class HomePage implements OnInit {
       };
 
       axios
-        .get("http://18.231.176.98:3000/users/" + id.user._id + "/devices/")
+        .get("http://18.231.119.219:3000/users/" + id.user._id + "/devices/")
         .then(response => {
           this.devices = response.data;
         });
@@ -102,7 +102,7 @@ export class HomePage implements OnInit {
 
       axios
         .post(
-          "http://18.231.176.98:3000/users/devices/" + deviceID + "/shadow",
+          "http://18.231.119.219:3000/users/devices/" + deviceID + "/shadow",
           data
         )
         .then(e => console.log(e))
